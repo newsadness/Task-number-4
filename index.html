@@ -1,0 +1,109 @@
+<DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Task number 4</title>
+        <link rel="stylesheet" href="DefaultTask4.css"> 
+    </head>
+    <body class="default">
+<div class="text"> Задача 4s</div>
+        <table class="table"> 
+          <tr>
+              <td>
+              <p class="text2">Блок-схема:</br>
+
+                  Код программы:</br>
+Файл ProgramSchedule.java</br>
+import java.util.ArrayList;</br>
+import java.util.List;</br>
+
+public class ProgramSchedule {</br>
+    private List<Channel> channels;</br>
+
+    public ProgramSchedule() {</br>
+        channels = new ArrayList<>();</br>
+    }</br>
+    public void addChannel(String channelName) {</br>
+        channels.add(new Channel(channelName));</br>
+    }</br>
+
+    public void addProgramToChannel(String channelName, String programName) {</br>
+        for (Channel channel : channels) {</br>
+            if (channel.getChannelName().equals(channelName)) {</br>
+                channel.addProgram(programName);</br>
+                return;</br>
+            }</br>
+        }</br>
+        System.out.println("Канал с названием \"" + channelName + "\" не найден.");</br>
+    }</br>
+
+    public void displaySchedule() {</br>
+        for (Channel channel : channels) {</br>
+            System.out.println("Канал: " + channel.getChannelName());</br>
+            channel.displayPrograms();</br>
+        }</br>
+    }</br>
+
+    public class Channel {</br>
+        private String channelName;</br>
+        private List<String> programs;</br>
+
+        public Channel(String channelName) {</br>
+            this.channelName = channelName;</br>
+            this.programs = new ArrayList<>();</br>
+        }</br>
+
+        public String getChannelName() {</br>
+            return channelName;</br>
+        }</br>
+
+        public void addProgram(String programName) {</br>
+            programs.add(programName);</br>
+        }</br>
+
+        public void displayPrograms() {</br>
+            if (programs.isEmpty()) {</br>
+                System.out.println("  Нет программ для отображения.");</br>
+            } else {</br>
+                for (String program : programs) {</br>
+                    System.out.println("  Программа: " + program);</br>
+                }</br>
+            }</br>
+        }</br>
+    }</br>
+    public static void main(String[] args) {</br>
+        ProgramSchedule schedule = new ProgramSchedule();</br>
+        schedule.addChannel("Первый канал");</br>
+        schedule.addChannel("Россия 1");</br>
+        schedule.addChannel("НТВ");</br>
+
+        schedule.addProgramToChannel("Первый канал", "Новости");</br>
+        schedule.addProgramToChannel("Первый канал", "Большая игра");</br>
+        schedule.addProgramToChannel("Россия 1", "Вести");</br>
+        schedule.addProgramToChannel("НТВ", "Сегодня");</br>
+
+        schedule.displaySchedule();</br>
+    }</br>
+}</br>
+</p>
+
+
+          </td>
+          </tr>
+<tr> 
+    <td>
+    <p class="text"> Скриншот результата </p>
+    <img class="img" src="https://raw.githubusercontent.com/newsadness/Task-number-4/a4de8028a55509ab62fcb7c9a71862b755122896/4.png">
+    </td>
+</tr>
+          <tr>
+             <td> 
+                 <a href="https://newsadness.github.io/1st-week/"> 
+                   <button class="button"> назад </button> 
+                 </a> 
+            </td>
+          </tr>
+        </table> 
+    </body>
+</html>
+</DOCTYPE>
